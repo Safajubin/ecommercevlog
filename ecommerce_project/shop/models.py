@@ -8,7 +8,7 @@ class Category(models.Model):
     name = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
     desc = models.TextField()
-    img = models.ImageField(upload_to='category_images', blank=True)
+    img = models.ImageField(upload_to='category_images/', blank=True)
 
     class Meta:
         ordering = ('name',)
@@ -27,7 +27,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     desc = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    img = models.ImageField(upload_to='product_images', blank=True,null=True)
+    img = models.ImageField(upload_to='product_images/', blank=True,null=True)
     stock = models.IntegerField()
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
